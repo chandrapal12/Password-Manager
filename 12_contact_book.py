@@ -16,6 +16,7 @@ print(
 while True:
     option = int(input("\nEnter your option: "))
     if option == 1:
+        # ============= Save the contacts ==============
         for i in range(num):
             phoneNumber=input("\nPhone number:  ")
             name=input("Name:  ")
@@ -23,6 +24,7 @@ while True:
             namesList.append(name)
 
     elif option == 2:
+        # ============= Show the saved contacts list ==============
         try:
             print("\nPhone number\t\t\tName\n") 
             for i in range(num):
@@ -31,6 +33,7 @@ while True:
             print("")
 
     elif option == 3:
+        # ============= Search the contacts ==============
         findContacts=input("\nEnter name to search phone number: ")
         if findContacts in namesList:
             nameIndex=namesList.index(findContacts)
@@ -40,6 +43,7 @@ while True:
             print("\nNot found in the contact list")
     
     elif option == 4:
+        # ============= Delete the contacts ==============
         deleteContacts=input("\nEnter name to delete form the contacts list: ")
         if deleteContacts in namesList:
             namesList.remove(deleteContacts)
@@ -48,10 +52,12 @@ while True:
             print(f"{deleteContacts} is not found in the contact list")
 
     elif option == 5:
+        # ============= Delete all the contacts ==============
         print(f"{len(namesList)} contact(s) deleted from the contact list")
         namesList.clear()
         phoneNumbersList.clear()
         
 
     elif option == 6:
+        # ============= Exit from the program ==============
         exit() 
